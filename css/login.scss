@@ -1,0 +1,391 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+     :hover {
+        transition: 0.6s ease;
+    }
+     :focus {
+        outline: none;
+    }
+    a {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+
+/*Smooth Behavior*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/*KeyFrame*/
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/*ColorScheme*/
+
+$ycolor: #FFB80B;
+$dcolor: #121214;
+$dcolor2: #33323A;
+$fcolor: #26252B;
+$input: #EAEAEA;
+$purple: #312547;
+
+/*ScrolBar Color*/
+
+ ::-webkit-scrollbar {
+    width: 8px;
+}
+
+ ::-webkit-scrollbar-track {
+    background: #4d4d4d;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: #252525;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+}
+
+
+/*GoToTopButton*/
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 10px;
+    right: 5px;
+    z-index: 1000;
+    border: none;
+    outline: none;
+    background-color: $ycolor;
+    cursor: pointer;
+    padding: 12px 17px;
+    border-radius: 50px;
+    font-size: 18px;
+    color: white;
+}
+
+
+/*Side Bar*/
+
+.side {
+    background-color: rgba(12, 12, 14, 0.95);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    padding: 12px 1em;
+    z-index: 999999;
+    overflow: hidden;
+    top: -100%;
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        a {
+            margin: 0px 10px;
+        }
+        .first {
+            border-right: 1px white solid;
+            padding: 0px 20px;
+        }
+    }
+    button {
+        border: 1px #fff solid;
+        border-radius: 50px;
+        background-color: #121214;
+        float: right;
+        i {
+            color: white;
+            padding: 12px 13px;
+        }
+    }
+}
+
+
+/*NavBar*/
+
+.nav {
+    width: 100%;
+    height: 100%;
+    background-color: $dcolor2;
+    .nav-con {
+        height: 100%;
+        margin: auto;
+        padding: 0px 1em;
+        display: flex;
+        justify-content: space-between;
+        .nav-1 {
+            padding: 12px 0px;
+            a {
+                display: flex;
+                i {
+                    color: $ycolor;
+                    font-size: 25px;
+                    margin-right: 10px;
+                }
+                h3 {
+                    color: white;
+                    text-transform: uppercase;
+                }
+            }
+        }
+        .nav-2 {
+            padding: 12px 0px;
+            ul {
+                a {
+                    margin: 0px 8px;
+                    transition: 0.5s ease;
+                }
+                .first {
+                    border-right: 1px white solid;
+                    padding: 0px 20px;
+                }
+                a:hover {
+                    color: $ycolor;
+                    transition: 0.5s ease;
+                }
+            }
+        }
+        .nav-3 {
+            padding: 5px 0px;
+            display: none;
+            button {
+                background-color: transparent;
+                border: none;
+                ul {
+                    list-style: none;
+                    li {
+                        height: 3px;
+                        width: 50px;
+                        margin: 7px 0px;
+                        background-color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*Body*/
+
+.body {
+    width: 100%;
+    height: 100%;
+    .body-con {
+        height: 100%;
+        max-width: 580px;
+        margin: auto;
+        padding: 20px 1em;
+        text-align: center;
+        padding-top: 3%;
+        .box {
+            width: 100%;
+            padding: 60px 30px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            h1 {
+                font-size: 16px;
+                background-color: $ycolor;
+                border-radius: 6px;
+                padding: 8px 0px;
+                margin-bottom: 30px;
+            }
+            h2 {
+                color: $dcolor2;
+                font-size: 36px;
+                margin-bottom: 20px;
+            }
+            .warning{
+                background-color: #da123dc4;
+                border: 1px #5d0e1f solid;
+                border-radius: 6px;
+                padding: 10px;
+                margin-bottom: 20px;
+                display: none;
+                p{
+                    color: rgb(41, 38, 38);
+                    font-weight: bold;
+                }
+            }
+            form {
+                margin: auto;
+                margin-bottom: 30px;
+                .input {
+                    background-color: $input;
+                    margin-bottom: 20px;
+                    display: flex;
+                    padding: 10px 22px;
+                    border-radius: 6px;
+                    i {
+                        font-size: 20px;
+                        color: $purple;
+                        margin-right: 20px;
+                    }
+                    input {
+                        padding: 0px 10px;
+                        border: none;
+                        background-color: transparent;
+                        font-family: 'Poppins', sans-serif;
+                        font-weight: 200;
+                        color: $purple;
+                        border-left: 1px $purple solid;
+                        font-size: 15px;
+                        width: 100%;
+                    }
+                    input[type=text]::placeholder {
+                        color: #3f3f3f;
+                    }
+                }
+                .link {
+                    margin-bottom: 30px;
+                    a {
+                        color: $ycolor;
+                    }
+                }
+                button {
+                    border: none;
+                    background-color: $ycolor;
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 900;
+                    color: $dcolor;
+                    font-size: 16px;
+                    text-transform: uppercase;
+                    width: 100%;
+                    padding: 10px;
+                    border-radius: 6px;
+                }
+            }
+            .link {
+                margin-bottom: 30px;
+                font-weight: 200;
+                a {
+                    color: $ycolor;
+                }
+            }
+        }
+    }
+}
+
+
+/*Success*/
+
+.success {
+    background-color: #259b10;
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px 1em;
+    margin-bottom: 10px;
+    color: white;
+    i {
+        margin-left: 10px;
+    }
+}
+
+
+/*Errors*/
+
+.res-list {
+    position: fixed;
+    right: 0px;
+    bottom: 80px;
+    .error {
+        background-color: rgb(177, 27, 27);
+        border-radius: 10px 0px 0px 10px;
+        padding: 15px 2em;
+        list-style: none;
+        margin-bottom: 5px;
+        li {
+            margin: 8px 0px;
+            color: white;
+            i {
+                margin-right: 5px;
+                color: #FFB80B;
+                animation: blink 2.5s infinite;
+            }
+        }
+    }
+    button {
+        padding: 8px 10px;
+        border-radius: 10px 0px 0px 10px;
+        background-color: rgb(177, 27, 27);
+        color: white;
+        border: none;
+        float: right;
+    }
+    #errorbtn1 {
+        display: none;
+    }
+}
+
+
+/*Copyrights*/
+
+.copy-rights {
+    width: 100%;
+    text-align: center;
+    background-color: $fcolor;
+    padding: 15px 0em;
+    margin: auto;
+    position: fixed;
+    bottom: 0px;
+    p {
+        color: white;
+        font-size: 14px;
+        i {
+            color: red;
+        }
+    }
+}
+
+
+/*Responsive*/
+
+@media screen and (max-width: 720px) {
+    .nav {
+        .nav-con {
+            .nav-2 {
+                display: none;
+            }
+            .nav-3 {
+                display: block;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 590px) {
+    .body {
+        .body-con {
+            padding-top: 50px;
+            .box {
+                padding: 50px 0em;
+                box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+}
